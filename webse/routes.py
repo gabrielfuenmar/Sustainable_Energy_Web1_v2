@@ -309,7 +309,7 @@ def save_picture(form_picture):
     
     in_mem_file.seek(0)
         
-    s3_r.Bucket("picsene425").put_object(Key=picture_fn, Body=in_mem_file)
+    s3_r.Bucket(BUCKET).put_object(Key=picture_fn, Body=in_mem_file)
 
     return picture_fn
 
