@@ -356,7 +356,7 @@ def new_announcement():
 @app.route("/announcement/<int:announcement_id>")
 def announcement(announcement_id):
     announcement = Announcement.query.get_or_404(announcement_id)
-    return render_template('announcement.html', title=announcement.title, announcement=announcement)
+    return render_template('announcement.html', title=announcement.title, announcement=announcement,func=read_image)
 
 @app.route("/announcement/user/<string:username>")
 def user_announcements(username):
